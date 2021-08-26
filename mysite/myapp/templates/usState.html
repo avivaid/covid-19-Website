@@ -1,0 +1,38 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>USA State data</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+ <div class="topnav">
+  <a href="{% url 'index' %}">About Us</a>
+  <a href="{% url 'row' %}">Around the world </a>
+  <a href= "{% url 'usaState' %}">USA State</a>
+  <a href="{% url  'usaDeath' %}">USA Confirmed Death</a>
+  <a href="/chat/covid19">Live Group Chat</a>
+  {% if user.is_authenticated %}
+    <a href="{% url  'logout' %}">Logout</a>
+  {% else %}
+    <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+</div>
+ <h1> USA State Data </h1>
+ <br>
+ <p> This page shows the number case reported for each state on a praticular date. You can filture the data by state, date or both. To make it work please enter state and/or date same as they apper in table</p>
+ </p>
+ <br>
+
+  <form action="/usaState", method = "POST">
+        {% csrf_token %}
+        {{dateform}}
+        {{stateform}}
+        <input type = "submit" value="Filter Data">
+ </form>
+<br>
+   <div id="my_table"> {{ df.to_html | safe }} </div>
+</body>
+</html>

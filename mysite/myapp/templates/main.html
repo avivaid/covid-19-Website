@@ -1,0 +1,38 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COVID-19 DATA</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+ <div class="topnav">
+  <a href="{% url 'index' %}">About Us</a>
+  <a href="{% url 'row' %}">Around the world </a>
+  <a href= "{% url 'usaState' %}">USA State</a>
+  <a href="{% url  'usaDeath' %}">USA Confirmed Death</a>
+  <a href="/chat/covid19">Live Group Chat</a>
+  <a href = " https://systems.jhu.edu/"> CSSE website </a>
+  <a href =  https://github.com/CSSEGISandData/COVID-19>Jhon Hopkins Github </a>
+  <a href ="https://github.com/jeffcore?tab=repositories">Jeff Rix Github</a>
+  {% if user.is_authenticated %}
+    <a href="{% url  'logout' %}">Logout</a>
+   {% else %}
+    <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+</div> 
+
+    <h1> A little bit about us </h1>
+    <p> This websites show the data on the new
+      covid-19 pandamic. The information is updated daily.
+      The data is originally collected by the very hardworking team at
+      Johns Hopkins University Center for Systems Science and Engineering (CSSE). The data is
+      futher polished by a  github user named jeffcore. The data is being pulled from his git repo.
+      Links to both the git repos and the CSSE website can be found in the top bar at the home page. 
+     </p>
+    <p> This websites also provides a group chat services for its users but you must be logged in to use the group chat
+     </p>
+</body>
+</html>

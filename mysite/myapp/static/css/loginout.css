@@ -1,0 +1,77 @@
+body {
+    background-color:grey;
+}
+h1 {
+    color:black;
+    text-align: center;
+}
+h2 {
+    color:black
+}
+
+p{
+    color:black;
+    text-align: left;
+}
+
+a{
+  color:blue;
+
+}
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+label{
+  width :102px; 
+  display:inline-block;
+
+}
+
+table {
+  color:black ;
+  border:black;
+}
+form {
+  display:block;
+  width:50%;
+  margin:auto;
+}
+input{
+  background-color:white; 
+  border: none;
+  color: black;
+  padding: 10px  10px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color:black; 
+  border: none;
+  color: white;
+  padding: 20px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}

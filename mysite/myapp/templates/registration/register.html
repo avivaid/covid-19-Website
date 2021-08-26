@@ -1,0 +1,44 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="{% static '/css/loginout.css' %}">
+</head>
+<body>
+ <h1> Register to chat with other users </h1>
+ <div class="topnav">
+  <a href="{% url 'index' %}">About Us</a>
+  <a href="{% url 'row' %}">Around the world </a>
+  <a href= "{% url 'usaState' %}">USA State</a>
+  <a href="{% url  'usaDeath' %}">USA Confirmed Death</a>
+ <a href="/chat/covid19">Live Group Chat</a>
+  </div>
+   <br>
+<form action="/register/" method="post">
+        {% csrf_token %}
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        <br>
+        <br>
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        <br>
+        <br>
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+        <br>
+        <br>
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+        <br>
+        <br>
+        <input type="submit" class="button expanded" value="Register" />
+               <input  type = "button" onclick="window.location.href='/login/';"value="Login">  
+        </input>
+ 
+        {{ form.errors }}
+</form>
+</body>
+</html>
